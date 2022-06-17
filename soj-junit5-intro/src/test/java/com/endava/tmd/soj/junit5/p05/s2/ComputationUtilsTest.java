@@ -1,6 +1,5 @@
 package com.endava.tmd.soj.junit5.p05.s2;
 
-import com.endava.tmd.soj.junit5.p05.s2.ComputationUtils;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -120,17 +119,18 @@ class ComputationUtilsTest {
                 .hasMessage("Overflow while computing the sum");
     }
 
+    @Test
     @DisplayName("-2147483648 + (-1) \u21D2 Overflow")
     void exceptionWhenSumIsLowerThanIntegerMinValue() {
         // JUnit way of checking the exception class
-        assertThrows(ArithmeticException.class, () -> com.endava.tmd.soj.junit5.p05.s1.ComputationUtils.sum(-2147483647, -1));
+        assertThrows(ArithmeticException.class, () -> ComputationUtils.sum(-2147483648, -1));
 
         // JUnit way of checking the exception class and its characteristics
-        ArithmeticException exception = assertThrows(ArithmeticException.class, () -> com.endava.tmd.soj.junit5.p05.s1.ComputationUtils.sum(-2147483647, -2147483647));
+        ArithmeticException exception = assertThrows(ArithmeticException.class, () -> ComputationUtils.sum(-2147483648, -2147483648));
         assertEquals("Overflow while computing the sum", exception.getMessage());
 
         // AssertJ
-        assertThatThrownBy(() -> com.endava.tmd.soj.junit5.p05.s1.ComputationUtils.sum(-2147483647, -1))
+        assertThatThrownBy(() -> ComputationUtils.sum(-2147483648, -1))
                 .isInstanceOf(ArithmeticException.class)
                 .hasMessage("Overflow while computing the sum");
     }

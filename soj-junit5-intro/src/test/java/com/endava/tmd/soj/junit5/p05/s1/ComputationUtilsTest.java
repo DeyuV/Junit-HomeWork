@@ -123,14 +123,14 @@ class ComputationUtilsTest {
     @DisplayName("-2147483648 + (-1) \u21D2 Overflow")
     void exceptionWhenSumIsLowerThanIntegerMinValue() {
         // JUnit way of checking the exception class
-        assertThrows(ArithmeticException.class, () -> ComputationUtils.sum(-2147483647, -1));
+        assertThrows(ArithmeticException.class, () -> ComputationUtils.sum(-2147483648, -1));
 
         // JUnit way of checking the exception class and its characteristics
-        ArithmeticException exception = assertThrows(ArithmeticException.class, () -> ComputationUtils.sum(-2147483647, -2147483647));
+        ArithmeticException exception = assertThrows(ArithmeticException.class, () -> ComputationUtils.sum(-2147483648, -2147483648));
         assertEquals("Overflow while computing the sum", exception.getMessage());
 
         // AssertJ
-        assertThatThrownBy(() -> ComputationUtils.sum(-2147483647, -1))
+        assertThatThrownBy(() -> ComputationUtils.sum(-2147483648, -1))
                 .isInstanceOf(ArithmeticException.class)
                 .hasMessage("Overflow while computing the sum");
     }

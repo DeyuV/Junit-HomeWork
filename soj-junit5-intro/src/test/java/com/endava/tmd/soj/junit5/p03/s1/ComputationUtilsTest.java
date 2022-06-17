@@ -1,6 +1,5 @@
 package com.endava.tmd.soj.junit5.p03.s1;
 
-import com.endava.tmd.soj.junit5.p01.ComputationUtils;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;

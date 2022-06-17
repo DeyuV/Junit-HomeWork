@@ -1,6 +1,5 @@
 package com.endava.tmd.soj.junit5.p04;
 
-import com.endava.tmd.soj.junit5.p01.ComputationUtils;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

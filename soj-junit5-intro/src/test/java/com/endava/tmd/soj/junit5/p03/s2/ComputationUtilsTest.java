@@ -1,6 +1,5 @@
 package com.endava.tmd.soj.junit5.p03.s2;
 
-import com.endava.tmd.soj.junit5.p01.ComputationUtils;
 import org.junit.jupiter.api.*;
 
 import static org.assertj.core.api.Assertions.assertThat;
